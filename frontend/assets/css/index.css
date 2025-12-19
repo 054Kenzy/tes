@@ -5,12 +5,9 @@
 }
 
 body {
-  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #ffffff;
-  color: #1a1a1a;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;  
-  -moz-osx-font-smoothing: grayscale;
+  color: #111827;
 }
 
 /* ========== HEADER ========== */
@@ -53,12 +50,11 @@ body {
 }
 
 .logo {
-  font-size: 26px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: #2b4474;
+  color: #324c8a;
   text-decoration: none;
-  letter-spacing: -0.5px;
-  transition: opacity 0.3s ease;
 }
 
 .logo:hover {
