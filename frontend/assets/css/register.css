@@ -18,7 +18,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); /* contoh penggunaan box-shadow [web:37] */
 }
 
 .header .container {
@@ -29,14 +29,12 @@ body {
 
 .logo {
   display: inline-block;
-  font-family: 'Nunito', 'Varela Round', 'Quicksand', sans-serif;
-  font-size: 2.0rem;
-  font-weight: 1000;
+  font-family: 'Nunito', system-ui, sans-serif; /* Google Fonts Nunito [web:23] */
+  font-size: 2rem;
+  font-weight: 900;
   color: #3b5177;
   text-decoration: none;
   letter-spacing: -0.02em;
-  margin: 0;
-  padding: 0;
   line-height: 1;
   transition: opacity 0.2s;
 }
@@ -105,12 +103,46 @@ body {
   box-shadow: 0 0 0 3px rgba(59, 81, 119, 0.1);
 }
 
+/* Options: Remember me & Forgot password */
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #3b5177; /* properti accent-color [web:30] */
+}
+
+.link {
+  color: #3b5177;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 .btn {
   width: 100%;
   border: none;
   border-radius: 10px;
   padding: 12px 0;
-  margin-top: 8px;
+  margin-top: 4px;
   background: #f8b400;
   color: #1f2937;
   font-weight: 600;
@@ -150,12 +182,18 @@ body {
   .form {
     padding: 26px 20px;
   }
-  
+
   .title {
     font-size: 1.4rem;
   }
-  
+
   .logo {
     font-size: 1.3rem;
+  }
+
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }

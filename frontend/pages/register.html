@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daftar Akun | Electhree</title>
+  <title>Daftar | Electhree</title>
   <link rel="stylesheet" href="../assets/css/register.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet"> <!-- [web:23] -->
+</head>
 <body>
-  <!-- Header dengan Logo Text -->
   <header class="header">
     <div class="container">
-      <a href="/" class="logo">
-        electhree
-      </a>
+      <a href="/" class="logo">electhree</a>
     </div>
   </header>
 
-  <!-- Form Register -->
   <div class="wrapper">
     <form class="form" action="/register" method="post">
-      <h1 class="title">Daftar Akun</h1>
-      <p class="subtitle">Mulai belanja peralatan listrik terbaik</p>
+      <h1 class="title">Buat Akun Baru</h1>
+      <p class="subtitle">Daftar dan mulai belanja kebutuhan listrik</p>
 
       <div class="field">
-        <label for="nama">Nama lengkap</label>
-        <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required />
+        <label for="first_name">Nama depan</label>
+        <input type="text" id="first_name" name="first_name"
+               placeholder="Nama depan" required />
+      </div>
+
+      <div class="field">
+        <label for="last_name">Nama belakang</label>
+        <input type="text" id="last_name" name="last_name"
+               placeholder="Nama belakang" required />
       </div>
 
       <div class="field">
@@ -36,28 +40,24 @@
       </div>
 
       <div class="field">
-        <label for="no_hp">No. HP</label>
-        <input type="tel" id="no_hp" name="no_hp"
-               placeholder="08xxxxxxxxxx"
-               minlength="10" maxlength="15"
-               pattern="[0-9]{10,15}" required />
+        <label for="phone">Nomor HP</label>
+        <input type="tel" id="phone" name="phone"
+               placeholder="08xxxxxxxxxx" />
       </div>
 
       <div class="field">
         <label for="password">Password</label>
         <input type="password" id="password" name="password"
-               minlength="8"
                placeholder="Minimal 8 karakter" required />
       </div>
 
       <div class="field">
         <label for="confirm_password">Konfirmasi password</label>
-        <input type="password" id="confirm_password"
-               name="confirm_password"
-               minlength="8" required />
+        <input type="password" id="confirm_password" name="confirm_password"
+               placeholder="Ulangi password" required />
       </div>
 
-      <button type="submit" class="btn">Daftar Sekarang</button>
+      <button type="submit" class="btn">Daftar</button>
 
       <p class="meta">
         Sudah punya akun?
@@ -65,17 +65,5 @@
       </p>
     </form>
   </div>
-
-  <script>
-    const form = document.querySelector('.form');
-    form.addEventListener('submit', (e) => {
-      const pwd = document.getElementById('password').value;
-      const confirm = document.getElementById('confirm_password').value;
-      if (pwd !== confirm) {
-        e.preventDefault();
-        alert('Password dan konfirmasi password tidak sama.');
-      }
-    });
-  </script>
 </body>
 </html>
