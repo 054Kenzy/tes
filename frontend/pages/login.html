@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk | Electhree</title>
+    <link rel="stylesheet" href="../assets/css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<body>
+    <!-- Header dengan Logo Text -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                electhree
+            </a>
+        </div>
+    </header>
+
+    <!-- Form Login -->
+    <div class="wrapper">
+        <form class="form" action="/login" method="post">
+        <h1 class="title">Masuk ke Akun</h1>
+        <p class="subtitle">Lanjutkan belanja peralatan listrik</p>
+
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"
+                placeholder="contoh@mail.com" required />
+        </div>
+
+        <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+            placeholder="Masukkan password" required />
+        </div>
+
+        <div class="options">
+            <label class="checkbox">
+            <input type="checkbox" name="remember" />
+            <span>Ingat saya</span>
+            </label>
+            <a href="/forgot-password" class="link">Lupa password?</a>
+        </div>
+
+        <button type="submit" class="btn">Masuk</button>
+
+        <p class="meta">
+            Belum punya akun?
+            <a href="/register">Daftar di sini</a>
+        </p>
+        </form>
+    </div>
+</body>
+</html>

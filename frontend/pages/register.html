@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Akun | Electhree</title>
+  <link rel="stylesheet" href="../assets/css/register.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<body>
+  <!-- Header dengan Logo Text -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        electhree
+      </a>
+    </div>
+  </header>
+
+  <!-- Form Register -->
+  <div class="wrapper">
+    <form class="form" action="/register" method="post">
+      <h1 class="title">Daftar Akun</h1>
+      <p class="subtitle">Mulai belanja peralatan listrik terbaik</p>
+
+      <div class="field">
+        <label for="nama">Nama lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"
+               placeholder="contoh@mail.com" required />
+      </div>
+
+      <div class="field">
+        <label for="no_hp">No. HP</label>
+        <input type="tel" id="no_hp" name="no_hp"
+               placeholder="08xxxxxxxxxx"
+               minlength="10" maxlength="15"
+               pattern="[0-9]{10,15}" required />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"
+               minlength="8"
+               placeholder="Minimal 8 karakter" required />
+      </div>
+
+      <div class="field">
+        <label for="confirm_password">Konfirmasi password</label>
+        <input type="password" id="confirm_password"
+               name="confirm_password"
+               minlength="8" required />
+      </div>
+
+      <button type="submit" class="btn">Daftar Sekarang</button>
+
+      <p class="meta">
+        Sudah punya akun?
+        <a href="/login">Masuk di sini</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector('.form');
+    form.addEventListener('submit', (e) => {
+      const pwd = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm_password').value;
+      if (pwd !== confirm) {
+        e.preventDefault();
+        alert('Password dan konfirmasi password tidak sama.');
+      }
+    });
+  </script>
+</body>
+</html>
