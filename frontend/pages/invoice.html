@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice | Electhree</title>
+
+    <link rel="stylesheet" href="../assets/css/product-category.css" />
+    <link rel="stylesheet" href="../assets/css/invoice.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+
+    <main class="invoice-page">
+        <div class="invoice-container">
+        <section class="invoice-card">
+            <!-- Top row: logo + invoice text -->
+            <header class="invoice-header">
+            <div class="brand">
+                <div class="brand-logo">electhree</div>
+                <p class="brand-tagline">Comfort for Every Family</p>
+            </div>
+            <div class="invoice-title-block">
+                <h1 class="invoice-title">Invoice</h1>
+                <p class="invoice-id" id="inv-order-id">#E3-20251220</p>
+            </div>
+            </header>
+
+            <!-- Billing info -->
+            <section class="invoice-info">
+            <div class="info-col">
+                <h2>Bill To</h2>
+                <p class="info-main">John Doe</p>
+                <p>Jl. Raya Rungkut Madya No. 1</p>
+                <p>+6285678904627</p>
+                <p>john.doe@email.com</p>
+            </div>
+            <div class="info-col">
+                <h2>Details</h2>
+                <p><span class="label">Issue Date</span><span id="inv-date">21 Dec 2025</span></p>
+                <p><span class="label">Payment Method</span><span id="inv-method">Virtual Account</span></p>
+                <p><span class="label">Status</span><span class="status-paid" id="inv-status">Paid</span></p>
+            </div>
+            </section>
+
+            <!-- Items table -->
+            <section class="invoice-items" id="inv-items">
+            <div class="items-header">
+                <span class="col-product">Product</span>
+                <span class="col-qty">QTY</span>
+                <span class="col-price">Price</span>
+                <span class="col-total">Total</span>
+            </div>
+            <!-- rows akan dibuat JS -->
+            </section>
+
+            <div class="items-row">
+                <span class="col-product">
+                Air Conditioner
+                <span class="product-meta">Home Appliances</span>
+                </span>
+                <span class="col-qty">2</span>
+                <span class="col-price">Rp799.000</span>
+                <span class="col-total">Rp1.598.000</span>
+            </div>
+
+            <div class="items-row">
+                <span class="col-product">
+                Electric Toothbrush
+                <span class="product-meta">Personal Care</span>
+                </span>
+                <span class="col-qty">1</span>
+                <span class="col-price">Rp450.000</span>
+                <span class="col-total">Rp450.000</span>
+            </div>
+
+            <div class="items-row">
+                <span class="col-product">
+                Wireless Headphone
+                <span class="product-meta">Home Entertainments</span>
+                </span>
+                <span class="col-qty">1</span>
+                <span class="col-price">Rp1.250.000</span>
+                <span class="col-total">Rp1.250.000</span>
+            </div>
+            </section>
+
+            <!-- Summary -->
+            <span id="inv-subtotal">Rp0</span>
+            <span id="inv-shipping">Rp0</span>
+            <span id="inv-total">Rp0</span>
+
+            <!-- Footer note + back -->
+            <section class="invoice-actions">
+            <p class="note">Thank you for shopping with Electhree.</p>
+            <a href="../pages/index.html" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Home
+            </a>
+            </section>
+        </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+            <div class="footer-logo">electhree</div>
+            <p class="footer-tagline">Comfort for Every Family</p>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            </div>
+
+            <div class="footer-col">
+            <h4>LOCATE US</h4>
+            <p>Jl. Raya Rungkut Madya No. 1</p>
+            <p>+6285678904627</p>
+            <p>electhree@gmail.com</p>
+            </div>
+
+            <div class="footer-col">
+            <h4>PROFILE</h4>
+            <p>My account</p>
+            <p>Cart</p>
+            <p>Order Shipping</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        fetch('../assets/components/header.html')
+        .then(r => r.text())
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+        })
+        .catch(err => console.error('Error loading header:', err));
+    </script>
+
+    <script>
+    function formatRupiah(num) {
+        return 'Rp' + num.toLocaleString('id-ID');
+    }
+
+    function renderInvoice() {
+        const raw = localStorage.getItem('electhree_order');
+        const order = JSON.parse(raw);
+
+        document.getElementById('inv-order-id').textContent = order.orderId || '-';
+        document.getElementById('inv-method').textContent = order.paymentMethod || '-';
+        document.getElementById('inv-status').textContent = order.status || '-';
+
+        const today = new Date();
+        const dateStr = today.toLocaleDateString('id-ID', {
+        day: '2-digit', month: 'short', year: 'numeric'
+        });
+        document.getElementById('inv-date').textContent = dateStr;
+
+        const container = document.getElementById('inv-items');
+        const header = container.querySelector('.items-header');
+        container.innerHTML = '';
+        container.appendChild(header);
+
+        let subtotal = 0;
+
+        order.items.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'items-row';
+
+        const itemTotal = item.qty * item.price;
+        subtotal += itemTotal;
+
+        row.innerHTML = `
+            <span class="col-product">
+            ${item.name}
+            <span class="product-meta">${item.category || ''}</span>
+            </span>
+            <span class="col-qty">${item.qty}</span>
+            <span class="col-price">${formatRupiah(item.price)}</span>
+            <span class="col-total">${formatRupiah(itemTotal)}</span>
+        `;
+
+        container.appendChild(row);
+        });
+
+        const shipping = order.shipping || 0;
+        const total = subtotal + shipping;
+
+        document.getElementById('inv-subtotal').textContent = formatRupiah(subtotal);
+        document.getElementById('inv-shipping').textContent = formatRupiah(shipping);
+        document.getElementById('inv-total').textContent = formatRupiah(total);
+    }
+
+    document.addEventListener('DOMContentLoaded', renderInvoice);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Confirmed | Electhree</title>
+
+  <!-- CSS halaman ini -->
+  <link rel="stylesheet" href="../assets/css/product-category.css" />
+  <link rel="stylesheet" href="../assets/css/confirmed-payment.css" />
+
+  <!-- Icon & Font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER (auto-load dari component) -->
+  <div id="header-placeholder"></div>
+
+  <main class="confirmed-page">
+    <div class="container">
+      <section class="confirmed-card">
+        <div class="icon-circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h1 class="confirmed-title">Payment Confirmed</h1>
+        <p class="confirmed-subtitle">Thank you. Your payment has been received.</p>
+
+        <div class="order-info">
+          <div class="order-row">
+            <span class="label">Order ID</span>
+            <span class="value">#E3-20251220</span>
+          </div>
+          <div class="order-row">
+            <span class="label">Payment Method</span>
+            <span class="value">Virtual Account</span>
+          </div>
+          <div class="order-row">
+            <span class="label">Total Payment</span>
+            <span class="value">Rp 2.899.000</span>
+          </div>
+          <div class="order-row">
+            <span class="label">Status</span>
+            <span class="value status-paid">Paid</span>
+          </div>
+        </div>
+
+        <div class="confirmed-actions">
+          <a href="invoice.html" class="btn-outline" id="btn-download-invoice">
+            <i class="fa-regular fa-file-lines"></i>
+            Download Invoice
+          </a>
+          <a href="index.html" class="btn-primary">
+            <i class="fa-solid fa-house"></i>
+            Back to Home
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER (sama seperti halaman lain) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">electhree</div>
+          <p class="footer-tagline">Comfort for Every Family</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>LOCATE US</h4>
+          <p>Jl. Raya Rungkut Madya No. 1</p>
+          <p>+6285678904627</p>
+          <p>electhree@gmail.com</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>PROFILE</h4>
+          <p>My account</p>
+          <p>Cart</p>
+          <p>Order Shipping</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load header component -->
+  <script>
+    fetch('../assets/components/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading header:', error));
+  </script>
+
+  <script>
+    const btnInvoice = document.getElementById('btn-download-invoice');
+
+    btnInvoice.addEventListener('click', function () {
+      const orderData = {
+        orderId: '#E3-20251220',
+        paymentMethod: 'Virtual Account',
+        status: 'Paid',
+        shipping: 350000,
+        items: [
+          { name: 'Air Conditioner', category: 'Home Appliances', qty: 2, price: 799000 },
+          { name: 'Electric Toothbrush', category: 'Personal Care', qty: 1, price: 450000 },
+          { name: 'Wireless Headphone', category: 'Home Entertainments', qty: 1, price: 1250000 }
+        ]
+      };
+
+      localStorage.setItem('electhree_order', JSON.stringify(orderData));
+      // link tetap jalan ke invoice.html
+    });
+  </script>
+
+</body>
+</html>

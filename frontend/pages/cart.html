@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart | Electhree</title>
+    <link rel="stylesheet" href="../assets/css/cart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Load Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="cart-page">
+        <div class="container">
+            <h1 class="page-title">Shopping cart items</h1>
+
+            <div class="cart-layout">
+                <!-- LEFT: Cart Items -->
+                <div class="cart-items">
+                    <!-- Cart Table Header -->
+                    <div class="cart-table-header">
+                        <span>Products</span>
+                        <span>Specs</span>
+                        <span>QTY</span>
+                        <span>Price</span>
+                    </div>
+
+                    <!-- Cart Item 1 - FIXED: tambah data-price dan class qty-minus/plus -->
+                    <div class="cart-item" data-price="799000">
+                        <img src="../assets/images/ac.png" alt="Air Conditioner" class="item-image">
+                        <div class="item-details">
+                            <h3 class="item-name">Air Conditioner</h3>
+                            <p class="item-category">Home Appliances</p>
+                        </div>
+                        <span class="item-specs">Black</span>
+                        <div class="qty-control">
+                            <button class="qty-btn qty-minus">-</button>
+                            <input type="number" value="2" min="1" class="qty-input">
+                            <button class="qty-btn qty-plus">+</button>
+                        </div>
+                        <span class="item-price">Rp799.000</span>
+                    </div>
+
+                    <!-- Cart Item 2 - FIXED: tambah data-price dan class -->
+                    <div class="cart-item" data-price="450000">
+                        <img src="../assets/images/electric-toothbrush.png" alt="Electric Toothbrush" class="item-image">
+                        <div class="item-details">
+                            <h3 class="item-name">Electric Toothbrush</h3>
+                            <p class="item-category">Personal Care</p>
+                        </div>
+                        <span class="item-specs">Black</span>
+                        <div class="qty-control">
+                            <button class="qty-btn qty-minus">-</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn qty-plus">+</button>
+                        </div>
+                        <span class="item-price">Rp450.000</span>
+                    </div>
+
+                    <!-- Cart Item 3 - FIXED: typo </p> dan tambah data-price -->
+                    <div class="cart-item" data-price="1250000">
+                        <img src="../assets/images/wireless-headphone.png" alt="Wireless Headphone" class="item-image">
+                        <div class="item-details">
+                            <h3 class="item-name">Wireless Headphone</h3>
+                            <p class="item-category">Home Entertainments</p>
+                        </div>
+                        <span class="item-specs">Black</span>
+                        <div class="qty-control">
+                            <button class="qty-btn qty-minus">-</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn qty-plus">+</button>
+                        </div>
+                        <span class="item-price">Rp1.250.000</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Summary -->
+                <aside class="cart-summary">
+                    <h2 class="summary-title">Summary</h2>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Total product:</span>
+                        <span class="summary-value" id="total-product">Rp0</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping costs:</span>
+                        <span class="summary-value" id="shipping-cost">Rp350.000</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row total-row">
+                        <span class="summary-label">Total:</span>
+                        <span class="summary-value" id="grand-total">Rp0</span>
+                    </div>
+                    <button class="btn-checkout" onclick="window.location.href='checkout-payment.html'">
+                        Place Order</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">electhree</div>
+                    <p class="footer-tagline">Comfort for Every Family</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>LOCATE US</h4>
+                    <p>Jl. Raya Rungkut Madya No. 1</p>
+                    <p>+6285678904627</p>
+                    <p>electhree@gmail.com</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>PROFILE</h4>
+                    <p>My account</p>
+                    <p>Cart</p>
+                    <p>Order Shipping</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk load header (CUKUP 1x) -->
+    <script>
+        fetch('../assets/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
+    <!-- Script untuk cart calculation -->
+    <script src="../assets/js/cart.js"></script>
+
+</body>
+</html>

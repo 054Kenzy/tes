@@ -138,5 +138,28 @@
         })
         .catch(error => console.error('Error loading header:', error));  // ✅ Tambah error handling
     </script>
+
+    <script>
+    const btnCheckout = document.getElementById('btn-checkout');
+
+    btnCheckout.addEventListener('click', function () {
+        // TODO: ganti angka di bawah dengan data asli dari checkout-payment
+        const orderData = {
+        orderId: '#E3-20251220',
+        paymentMethod: 'Virtual Account',
+        status: 'Paid',
+        shipping: 350000,
+        items: [
+            { name: 'Air Conditioner', category: 'Home Appliances', qty: 2, price: 799000 },
+            { name: 'Electric Toothbrush', category: 'Personal Care', qty: 1, price: 450000 },
+            { name: 'Wireless Headphone', category: 'Home Entertainments', qty: 1, price: 1250000 }
+        ]
+        };
+
+        localStorage.setItem('electhree_order', JSON.stringify(orderData));
+        window.location.href = 'invoice.html';
+    });
+    </script>
+
 </body>
 </html>
