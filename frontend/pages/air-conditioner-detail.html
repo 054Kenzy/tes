@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Conditioner | Electhree</title>
+    <link rel="stylesheet" href="../assets/css/product-detail.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Load Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- PRODUCT DETAIL -->
+        <section class="product-detail">
+        <div class="container detail-grid">
+            <!-- GAMBAR PRODUK -->
+            <div class="product-image">
+            <img src="../assets/images/ac.png" alt="Air Conditioner">
+            </div>
+
+            <!-- INFO PRODUK -->
+            <div class="product-info">
+            <h1 class="product-title">Air Conditioner</h1>
+            <p class="product-price-single">Rp799.000</p>
+
+            <div class="product-description">
+                <h3>Description:</h3>
+                <p>
+                Create a cool and comfortable home for your family with this air conditioner. 
+                It provides stable, quiet cooling while helping save energy, making everyday 
+                living more pleasant.
+                </p>
+            </div>
+
+            <div class="quantity-selector">
+                <label>Quantity:</label>
+                <div class="qty-controls">
+                <button class="qty-btn" id="decrease">-</button>
+                <input type="number" id="qty" value="1" min="1" readonly />
+                <button class="qty-btn" id="increase">+</button>
+                </div>
+                <p class="total-price">Rp799.000</p>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-add-cart">Add to Cart</button>
+                <button class="btn-buy-now">Buy Now</button>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- MAY ELECTHREE SUGGESTS -->
+        <section class="suggestions">
+        <div class="container">
+            <h2 class="section-title">May Electhree Suggests</h2>
+
+            <div class="suggestion-grid">
+            <!-- Produk 1 -->
+            <article class="suggestion-card">
+                <div class="suggestion-img">
+                <img src="../assets/images/iron.png" alt="Steam Iron">
+                </div>
+                <h4>Steam Iron</h4>
+                <p class="suggestion-price">Rp650.000</p>
+            </article>
+
+            <!-- Produk 2 -->
+            <article class="suggestion-card">
+                <div class="suggestion-img">
+                <img src="../assets/images/heater.png" alt="Portable Heater">
+                </div>
+                <h4>Portable Heater</h4>
+                <p class="suggestion-price">Rp799.000</p>
+            </article>
+
+            <!-- Produk 3 -->
+            <article class="suggestion-card">
+                <div class="suggestion-img">
+                <img src="../assets/images/dishwasher.png" alt="Dish Washer">
+                </div>
+                <h4>Dish Washer</h4>
+                <p class="suggestion-price">Rp4.999.000</p>
+            </article>
+
+            <!-- Produk 4 -->
+            <article class="suggestion-card">
+                <div class="suggestion-img">
+                <img src="../assets/images/robot-vacuum.png" alt="Robot Vacuum">
+                </div>
+                <h4>Robot Vacuum</h4>
+                <p class="suggestion-price">Rp3.499.000</p>
+            </article>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer fade-in">
+        <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+            <div class="footer-logo">electhree</div>
+            <p class="footer-tagline">Comfort for Every Family</p>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            </div>
+
+            <div class="footer-col">
+            <h4>LOCATE US</h4>
+            <p>Jl. Raya Rungkut Madya No. 1</p>
+            <p>+6285678904627</p>
+            <p>electhree@gmail.com</p>
+            </div>
+
+            <div class="footer-col">
+            <h4>PROFILE</h4>
+            <p>My account</p>
+            <p>Cart</p>
+            <p>Order Shipping</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple quantity calculator
+        const qtyInput = document.getElementById('qty');
+        const totalPrice = document.querySelector('.total-price');
+        const basePrice = 799000;
+
+        document.getElementById('increase').addEventListener('click', () => {
+        qtyInput.value = parseInt(qtyInput.value) + 1;
+        updateTotal();
+        });
+
+        document.getElementById('decrease').addEventListener('click', () => {
+        if (parseInt(qtyInput.value) > 1) {
+            qtyInput.value = parseInt(qtyInput.value) - 1;
+            updateTotal();
+        }
+        });
+
+        function updateTotal() {
+        const qty = parseInt(qtyInput.value);
+        const total = basePrice * qty;
+        totalPrice.textContent = 'Rp' + total.toLocaleString('id-ID');
+        }
+    </script>
+
+    <!-- Script untuk load header -->
+    <script>
+        fetch('../assets/components/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));  // ✅ Tambah error handling
+    </script>
+</body>
+</html>

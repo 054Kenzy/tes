@@ -350,6 +350,73 @@ body {
   transform: translateY(0);
 }
 
+/* DROPDOWN MENU */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 12px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  padding: 8px 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  color: #334155;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.dropdown-item .arrow {
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+/* Khusus dropdown Account (align ke kanan) */
+.nav-right .dropdown .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* Dropdown active state (untuk mobile/click) */
+.dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
   .header {

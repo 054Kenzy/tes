@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout + Payment | Electhree</title>
+    <link rel="stylesheet" href="../assets/css/checkout-payment.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Load Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-grid">
+            
+            <!-- ADDRESS DETAILS -->
+            <div class="address-column">
+                <h2 class="section-title">Address Details</h2>
+
+                <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-input" />
+                </div>
+                </div>
+
+                <div class="form-row">
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-input" />
+                </div>
+                </div>
+
+                <div class="form-group">
+                <label for="shippingAddress">Shipping Address</label>
+                <textarea id="shippingAddress" class="form-textarea" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea id="notes" class="form-textarea" rows="3"></textarea>
+                </div>
+            </div>
+
+            <!-- PAYMENT INFO -->
+            <div class="payment-column">
+                <h2 class="section-title">Payment Info</h2>
+
+                <div class="payment-method">
+                <label class="method-label">Payment Method:</label>
+                
+                <label class="radio-option">
+                    <input type="radio" name="paymentMethod" value="debit" />
+                    <span>Debit Card</span>
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="paymentMethod" value="credit" checked />
+                    <span>Credit Card</span>
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="paymentMethod" value="cod" />
+                    <span>COD</span>
+                </label>
+                </div>
+
+                <div class="form-group">
+                <label for="nameOnCard">Name On Card:</label>
+                <input type="text" id="nameOnCard" class="form-input" />
+                </div>
+
+                <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" class="form-input" maxlength="19" placeholder="1234 5678 9012 3456" />
+                </div>
+
+                <button class="btn-checkout">Check Out</button>
+            </div>
+
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+            <div class="footer-logo">electhree</div>
+            <p class="footer-tagline">Comfort for Every Family</p>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            </div>
+
+            <div class="footer-col">
+            <h4>LOCATE US</h4>
+            <p>Jl. Raya Rungkut Madya No. 1</p>
+            <p>+6285678904627</p>
+            <p>electhree@gmail.com</p>
+            </div>
+
+            <div class="footer-col">
+            <h4>PROFILE</h4>
+            <p>My account</p>
+            <p>Cart</p>
+            <p>Order Shipping</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk load header -->
+    <script>
+        fetch('../assets/components/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));  // ✅ Tambah error handling
+    </script>
+</body>
+</html>

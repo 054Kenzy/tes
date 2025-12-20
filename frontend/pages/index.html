@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Electhree</title>
   <link rel="stylesheet" href="../assets/css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,15 +15,59 @@
   <header class="header">
     <div class="container-header">
       <nav class="nav-left">
-        <a href="#" class="nav-link">Products</a>
-        <a href="#" class="nav-link">About</a>
+        <!-- PRODUCTS dengan dropdown -->
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-trigger">Products</a>
+          <div class="dropdown-menu">
+            <a href="home-appliances.html" class="dropdown-item">
+              <span>Home Appliances</span>
+              <span class="arrow">></span>
+            </a>
+            <a href="kitchen-appliances.html" class="dropdown-item">
+              <span>Kitchen Appliances</span>
+              <span class="arrow">></span>
+            </a>
+            <a href="personal-care.html" class="dropdown-item">
+              <span>Personal Care</span>
+              <span class="arrow">></span>
+            </a>
+            <a href="sports.html" class="dropdown-item">
+              <span>Sports</span>
+              <span class="arrow">></span>
+            </a>
+            <a href="home-entertainments.html" class="dropdown-item">
+              <span>Home Entertainments</span>
+              <span class="arrow">></span>
+            </a>
+            <a href="power-tools.html" class="dropdown-item">
+              <span>Power Tools</span>
+              <span class="arrow">></span>
+            </a>
+          </div>
+        </div>
+
+        <a href="#about" class="nav-link">About</a>
       </nav>
 
       <a href="/" class="logo">electhree</a>
 
       <nav class="nav-right">
-        <a href="#" class="nav-link">Shop</a>
-        <a href="#" class="nav-link">Account</a>
+        <a href="#shop" class="nav-link">Shop</a>
+
+        <!-- ACCOUNT dengan dropdown -->
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-trigger">Account</a>
+          <div class="dropdown-menu">
+            <a href="login.html" class="dropdown-item">
+              <span>Log in/Sign up</span>
+              <span class="arrow">></span>
+            </a>
+            <a href="my-order.html" class="dropdown-item">
+              <span>My Order</span>
+              <span class="arrow">></span>
+            </a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -144,5 +189,35 @@
 
   <!-- JavaScript untuk scroll animation -->
   <script src="../assets/js/scroll-animation.js"></script>
+
+  <script>
+    // Toggle dropdown on click (untuk mobile)
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdown = this.parentElement;
+        
+        // Close other dropdowns
+        document.querySelectorAll('.dropdown').forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(d => {
+          d.classList.remove('active');
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>

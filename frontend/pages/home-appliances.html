@@ -4,35 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Appliances | Electhree</title>
-    <link rel="stylesheet" href="../assets/css/home-appliances.css" />
+    <link rel="stylesheet" href="../assets/css/product-category.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container header-inner">
-        <a href="/" class="logo">electhree</a>
-
-        <div class="header-right">
-            <nav class="nav-main">
-            <a href="#" class="nav-link">Products</a>
-            <a href="#" class="nav-link">Cart</a>
-            </nav>
-
-            <div class="search-wrapper">
-            <input type="text" placeholder="What are you looking for" class="search-input" />
-            <button class="search-btn">🔍</button>
-            </div>
-
-            <a href="/account" class="nav-link">Account</a>
-        </div>
-        </div>
-    </header>
+    <!-- Load Header -->
+    <div id="header-placeholder"></div>
 
     <main>
-        <!-- HERO IMAGE -->
+        <!-- HERO IMAGE (template kamu) -->
         <section class="hero">
         <img src="../assets/images/hero-appliances.jpg" alt="Home Appliances" class="hero-img" />
         <div class="hero-caption">
@@ -43,38 +26,44 @@
         <!-- CONTENT: Sidebar + Product Grid -->
         <section class="content">
         <div class="container content-grid">
-            <!-- SIDEBAR KATEGORI -->
+            <!-- SIDEBAR (template kamu) -->
             <aside class="sidebar">
             <h3 class="sidebar-title">Category</h3>
             <ul class="category-list">
-                <li><a href="#" class="category-link active">Home Appliances</a></li>
+                <li><a href="home-appliances.html" class="category-link active">Home Appliances</a></li>
                 <li><a href="#" class="category-link">Kitchen Appliances</a></li>
-                <li><a href="#" class="category-link">Personal Care</a></li>
+                <li><a href="personal-care.html" class="category-link">Personal Care</a></li>
                 <li><a href="#" class="category-link">Sports</a></li>
-                <li><a href="#" class="category-link">Home Entertainments</a></li>
+                <li><a href="home-entertainments.html" class="category-link">Home Entertainments</a></li>
                 <li><a href="#" class="category-link">Power Tools</a></li>
             </ul>
             </aside>
 
-            <!-- AREA PRODUK -->
+            <!-- AREA PRODUK (konten dari temanmu, struktur template kamu) -->
             <div class="product-area">
             <div class="product-grid">
-                <!-- Baris 1 -->
+                
+                <!-- Produk 1: Air Conditioner -->
                 <article class="product-card">
-                <div class="product-img"></div>
+                <div class="product-img">
+                    <img src="../assets/images/ac.png" alt="Air Conditioner">
+                </div>
                 <h4 class="product-name">Air Conditioner</h4>
-                <p class="product-brand">15w+ Happy Buyers</p>
+                <p class="product-brand">8k+ Happy Buyers</p>
                 <p class="product-price">Rp799.000</p>
                 <div class="product-actions">
                     <button class="btn-cart-outline">Add to Cart</button>
-                    <button class="btn-buy">Buy Now</button>
+                    <a href="air-conditioner-detail.html" class="btn-buy">Buy Now</a>
                 </div>
                 </article>
 
+                <!-- Produk 2: Air Purifier -->
                 <article class="product-card">
-                <div class="product-img"></div>
+                <div class="product-img">
+                    <img src="../assets/images/purifier.png" alt="Air Purifier">
+                </div>
                 <h4 class="product-name">Air Purifier</h4>
-                <p class="product-brand">15w+ Happy Buyers</p>
+                <p class="product-brand">6k+ Happy Buyers</p>
                 <p class="product-price">Rp1.250.000</p>
                 <div class="product-actions">
                     <button class="btn-cart-outline">Add to Cart</button>
@@ -82,44 +71,139 @@
                 </div>
                 </article>
 
+                <!-- Produk 3: Vacuum Cleaner -->
                 <article class="product-card">
-                <div class="product-img"></div>
+                <div class="product-img">
+                    <img src="../assets/images/vacuum.png" alt="Vacuum Cleaner">
+                </div>
                 <h4 class="product-name">Vacuum Cleaner</h4>
-                <p class="product-brand">3w+ Happy Buyers</p>
-                <p class="product-price">Rp899.000</p>
+                <p class="product-brand">7k+ Happy Buyers</p>
+                <p class="product-price">Rp699.000</p>
                 <div class="product-actions">
                     <button class="btn-cart-outline">Add to Cart</button>
                     <button class="btn-buy">Buy Now</button>
                 </div>
                 </article>
 
-                <!-- Baris 2 -->
+                <!-- Produk 4: Standing Fan -->
                 <article class="product-card">
-                <div class="product-img"></div>
+                <div class="product-img">
+                    <img src="../assets/images/fan.png" alt="Standing Fan">
+                </div>
                 <h4 class="product-name">Standing Fan</h4>
-                <p class="product-brand">Ei Tanpa Kouta</p>
-                <p class="product-price">Rp350.000</p>
+                <p class="product-brand">9k+ Happy Buyers</p>
+                <p class="product-price">Rp300.000</p>
                 <div class="product-actions">
                     <button class="btn-cart-outline">Add to Cart</button>
                     <button class="btn-buy">Buy Now</button>
                 </div>
                 </article>
 
+                <!-- Produk 5: Washing Machine -->
                 <article class="product-card">
-                <div class="product-img"></div>
+                <div class="product-img">
+                    <img src="../assets/images/washer.png" alt="Washing Machine">
+                </div>
                 <h4 class="product-name">Washing Machine</h4>
-                <p class="product-brand">Eei Semi Tanpa Kouta</p>
-                <p class="product-price">Rp3.270.000</p>
+                <p class="product-brand">4k+ Happy Buyers</p>
+                <p class="product-price">Rp5.670.000</p>
                 <div class="product-actions">
                     <button class="btn-cart-outline">Add to Cart</button>
                     <button class="btn-buy">Buy Now</button>
                 </div>
                 </article>
 
+                <!-- Produk 6: Garment Steamer -->
                 <article class="product-card">
-                <div class="product-img"></div>
+                <div class="product-img">
+                    <img src="../assets/images/steamer.png" alt="Garment Steamer">
+                </div>
                 <h4 class="product-name">Garment Steamer</h4>
-                <p class="product-brand">Pi Tanpa Kouta</p>
+                <p class="product-brand">10k+ Happy Buyers</p>
+                <p class="product-price">Rp550.000</p>
+                <div class="product-actions">
+                    <button class="btn-cart-outline">Add to Cart</button>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+                </article>
+
+                <!-- Produk 7: Dehumidifier -->
+                <article class="product-card">
+                <div class="product-img">
+                    <img src="../assets/images/dehumidifier.png" alt="Dehumidifier">
+                </div>
+                <h4 class="product-name">Dehumidifier</h4>
+                <p class="product-brand">5k+ Happy Buyers</p>
+                <p class="product-price">Rp199.000</p>
+                <div class="product-actions">
+                    <button class="btn-cart-outline">Add to Cart</button>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+                </article>
+
+                <!-- Produk 8: Water Dispenser -->
+                <article class="product-card">
+                <div class="product-img">
+                    <img src="../assets/images/dispenser.png" alt="Water Dispenser">
+                </div>
+                <h4 class="product-name">Water Dispenser</h4>
+                <p class="product-brand">6k+ Happy Buyers</p>
+                <p class="product-price">Rp1.300.000</p>
+                <div class="product-actions">
+                    <button class="btn-cart-outline">Add to Cart</button>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+                </article>
+
+                <!-- Produk 9: Robot Vacuum -->
+                <article class="product-card">
+                <div class="product-img">
+                    <img src="../assets/images/robot-vacuum.png" alt="Robot Vacuum">
+                </div>
+                <h4 class="product-name">Robot Vacuum</h4>
+                <p class="product-brand">7k+ Happy Buyers</p>
+                <p class="product-price">Rp3.499.000</p>
+                <div class="product-actions">
+                    <button class="btn-cart-outline">Add to Cart</button>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+                </article>
+
+                <!-- Produk 10: Dishwasher -->
+                <article class="product-card">
+                <div class="product-img">
+                    <img src="../assets/images/dishwasher.png" alt="Dishwasher">
+                </div>
+                <h4 class="product-name">Dishwasher</h4>
+                <p class="product-brand">5k+ Happy Buyers</p>
+                <p class="product-price">Rp4.999.000</p>
+                <div class="product-actions">
+                    <button class="btn-cart-outline">Add to Cart</button>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+                </article>
+
+                <!-- Produk 11: Portable Heater -->
+                <article class="product-card">
+                <div class="product-img">
+                    <img src="../assets/images/heater.png" alt="Portable Heater">
+                </div>
+                <h4 class="product-name">Portable Heater</h4>
+                <p class="product-brand">3k+ Happy Buyers</p>
+                <p class="product-price">Rp799.000</p>
+                <div class="product-actions">
+                    <button class="btn-cart-outline">Add to Cart</button>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+                </article>
+
+                <!-- Produk 12: Steam Iron -->
+                <article class="product-card">
+                <div class="product-img">
+                    <img src="../assets/images/iron.png" alt="Steam Iron">
+                </div>
+                <h4 class="product-name">Steam Iron</h4>
+                <p class="product-brand">12k+ Happy Buyers</p>
                 <p class="product-price">Rp650.000</p>
                 <div class="product-actions">
                     <button class="btn-cart-outline">Add to Cart</button>
@@ -127,73 +211,6 @@
                 </div>
                 </article>
 
-                <!-- Baris 3 - duplikat 3 card lagi -->
-                <article class="product-card">
-                <div class="product-img"></div>
-                <h4 class="product-name">Product 7</h4>
-                <p class="product-brand">Brand Name</p>
-                <p class="product-price">Rp500.000</p>
-                <div class="product-actions">
-                    <button class="btn-cart-outline">Add to Cart</button>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                </article>
-
-                <article class="product-card">
-                <div class="product-img"></div>
-                <h4 class="product-name">Product 8</h4>
-                <p class="product-brand">Brand Name</p>
-                <p class="product-price">Rp750.000</p>
-                <div class="product-actions">
-                    <button class="btn-cart-outline">Add to Cart</button>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                </article>
-
-                <article class="product-card">
-                <div class="product-img"></div>
-                <h4 class="product-name">Product 9</h4>
-                <p class="product-brand">Brand Name</p>
-                <p class="product-price">Rp1.100.000</p>
-                <div class="product-actions">
-                    <button class="btn-cart-outline">Add to Cart</button>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                </article>
-
-                <!-- Baris 4 -->
-                <article class="product-card">
-                <div class="product-img"></div>
-                <h4 class="product-name">Product 10</h4>
-                <p class="product-brand">Brand Name</p>
-                <p class="product-price">Rp450.000</p>
-                <div class="product-actions">
-                    <button class="btn-cart-outline">Add to Cart</button>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                </article>
-
-                <article class="product-card">
-                <div class="product-img"></div>
-                <h4 class="product-name">Product 11</h4>
-                <p class="product-brand">Brand Name</p>
-                <p class="product-price">Rp980.000</p>
-                <div class="product-actions">
-                    <button class="btn-cart-outline">Add to Cart</button>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                </article>
-
-                <article class="product-card">
-                <div class="product-img"></div>
-                <h4 class="product-name">Product 12</h4>
-                <p class="product-brand">Brand Name</p>
-                <p class="product-price">Rp1.500.000</p>
-                <div class="product-actions">
-                    <button class="btn-cart-outline">Add to Cart</button>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                </article>
             </div>
             </div>
         </div>
@@ -201,33 +218,45 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-inner">
-        <div class="footer-col">
+    <footer class="footer fade-in">
+        <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
             <div class="footer-logo">electhree</div>
             <p class="footer-tagline">Comfort for Every Family</p>
-            <div class="footer-icons">
-            <span>IG</span>
-            <span>X</span>
-            <span>FB</span>
-            <span>in</span>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-        </div>
+            </div>
 
-        <div class="footer-col">
+            <div class="footer-col">
             <h4>LOCATE US</h4>
             <p>Jl. Raya Rungkut Madya No. 1</p>
             <p>+6285678904627</p>
             <p>electhree@gmail.com</p>
-        </div>
+            </div>
 
-        <div class="footer-col">
+            <div class="footer-col">
             <h4>PROFILE</h4>
             <p>My account</p>
             <p>Cart</p>
             <p>Order Shipping</p>
+            </div>
         </div>
         </div>
     </footer>
+
+    <!-- Script untuk load header -->
+    <script>
+        fetch('../assets/components/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));  // ✅ Tambah error handling
+    </script>
 </body>
 </html>
