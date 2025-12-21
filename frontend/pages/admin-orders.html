@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders | Electhree Admin</title>
+
+    <link rel="stylesheet" href="../assets/css/admin-dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/admin-orders.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+        <div class="sidebar-logo">electhree</div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashbord.html" class="nav-item">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Dashboard</span>
+            </a>
+            <a href="admin-products.html" class="nav-item">
+            <i class="fa-solid fa-box"></i>
+            <span>Products</span>
+            </a>
+            <a href="admin-orders.html" class="nav-item active">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Orders</span>
+            </a>
+            <a href="admin-customers.html" class="nav-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+            </a>
+            <a href="admin-settings.html" class="nav-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+            </a>
+        </nav>
+        </aside>
+
+        <!-- MAIN AREA -->
+        <div class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <h1 class="page-title">Orders</h1>
+            <div class="topbar-right">
+            <button class="icon-btn">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+                        <div class="admin-profile dropdown">
+            <button class="profile-trigger">
+                <div class="avatar">A</div>
+                <div class="admin-info">
+                <span class="name">Admin Electhree</span>
+                <span class="role">Administrator</span>
+                </div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+
+            <div class="profile-menu">
+                <div class="profile-menu-header">
+                <div class="avatar small">A</div>
+                <div>
+                    <p class="name">Admin Electhree</p>
+                    <p class="email">admin@electhree.com</p>
+                </div>
+                </div>
+                <div class="profile-menu-divider"></div>
+                <button class="profile-menu-item">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+                </button>
+                <button class="profile-menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Account settings</span>
+                </button>
+                <div class="profile-menu-divider"></div>
+                <a href="index.html" class="profile-menu-item logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+                </a>
+            </div>
+            </div>
+
+            </div>
+        </header>
+
+        <!-- CONTENT: 2 kolom -->
+        <main class="content orders-content">
+            <!-- LEFT: Orders table -->
+            <section class="orders-table-panel">
+            <div class="panel-header">
+                <h2>All Orders</h2>
+            </div>
+            <div class="orders-table">
+                <div class="table-row table-head">
+                <span>Order ID</span>
+                <span>Customer</span>
+                <span>Total</span>
+                <span>Date</span>
+                <span>Status</span>
+                </div>
+
+                <!-- Order rows dengan data-order-id -->
+                <div class="table-row order-row" data-order-id="IDX7778889999" data-customer="Kenny/Rane" data-total="Rp8.569.000" data-date="17/04/2025" data-status="Pending">
+                <span>IDX7778889999</span>
+                <span>Kenny/Rane</span>
+                <span>Rp8.569.000</span>
+                <span>17/04/2025</span>
+                <span class="badge badge-pending">Pending</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889998" data-customer="John Doe" data-total="Rp3.250.000" data-date="16/04/2025" data-status="Paid">
+                <span>IDX7778889998</span>
+                <span>John Doe</span>
+                <span>Rp3.250.000</span>
+                <span>16/04/2025</span>
+                <span class="badge badge-paid">Paid</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889997" data-customer="Jane Smith" data-total="Rp1.450.000" data-date="15/04/2025" data-status="Shipped">
+                <span>IDX7778889997</span>
+                <span>Jane Smith</span>
+                <span>Rp1.450.000</span>
+                <span>15/04/2025</span>
+                <span class="badge badge-shipped">Shipped</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889996" data-customer="Michael Brown" data-total="Rp2.899.000" data-date="14/04/2025" data-status="Paid">
+                <span>IDX7778889996</span>
+                <span>Michael Brown</span>
+                <span>Rp2.899.000</span>
+                <span>14/04/2025</span>
+                <span class="badge badge-paid">Paid</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889995" data-customer="Sarah Wilson" data-total="Rp5.670.000" data-date="13/04/2025" data-status="Pending">
+                <span>IDX7778889995</span>
+                <span>Sarah Wilson</span>
+                <span>Rp5.670.000</span>
+                <span>13/04/2025</span>
+                <span class="badge badge-pending">Pending</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889994" data-customer="David Lee" data-total="Rp799.000" data-date="12/04/2025" data-status="Cancelled">
+                <span>IDX7778889994</span>
+                <span>David Lee</span>
+                <span>Rp799.000</span>
+                <span>12/04/2025</span>
+                <span class="badge badge-cancelled">Cancelled</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889993" data-customer="Olivia Martinez" data-total="Rp1.299.000" data-date="11/04/2025" data-status="Paid">
+                <span>IDX7778889993</span>
+                <span>Olivia Martinez</span>
+                <span>Rp1.299.000</span>
+                <span>11/04/2025</span>
+                <span class="badge badge-paid">Paid</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889992" data-customer="William Anderson" data-total="Rp6.250.000" data-date="10/04/2025" data-status="Pending">
+                <span>IDX7778889992</span>
+                <span>William Anderson</span>
+                <span>Rp6.250.000</span>
+                <span>10/04/2025</span>
+                <span class="badge badge-pending">Pending</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889991" data-customer="Emily Johnson" data-total="Rp4.150.000" data-date="09/04/2025" data-status="Shipped">
+                <span>IDX7778889991</span>
+                <span>Emily Johnson</span>
+                <span>Rp4.150.000</span>
+                <span>09/04/2025</span>
+                <span class="badge badge-shipped">Shipped</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889990" data-customer="Daniel Kim" data-total="Rp2.430.000" data-date="08/04/2025" data-status="Cancelled">
+                <span>IDX7778889990</span>
+                <span>Daniel Kim</span>
+                <span>Rp2.430.000</span>
+                <span>08/04/2025</span>
+                <span class="badge badge-cancelled">Cancelled</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889989" data-customer="Sophia Lopez" data-total="Rp9.750.000" data-date="07/04/2025" data-status="Paid">
+                <span>IDX7778889989</span>
+                <span>Sophia Lopez</span>
+                <span>Rp9.750.000</span>
+                <span>07/04/2025</span>
+                <span class="badge badge-paid">Paid</span>
+                </div>
+
+                <div class="table-row order-row" data-order-id="IDX7778889988" data-customer="Liam Wilson" data-total="Rp1.050.000" data-date="06/04/2025" data-status="Pending">
+                <span>IDX7778889988</span>
+                <span>Liam Wilson</span>
+                <span>Rp1.050.000</span>
+                <span>06/04/2025</span>
+                <span class="badge badge-pending">Pending</span>
+                </div>
+
+            </div>
+            </section>
+        </main>
+        </div>
+    </div>
+
+    <!-- Script untuk interaktif -->
+    <script>
+    const orderRows = document.querySelectorAll('.order-row');
+
+    orderRows.forEach(row => {
+        row.addEventListener('click', function () {
+        const orderId = this.dataset.orderId;
+        window.location.href = `admin-order-detail.html?orderId=${orderId}`;
+        });
+    });
+    </script>
+
+    <script>
+    const profileTrigger = document.querySelector('.profile-trigger');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    if (profileTrigger && profileMenu) {
+        profileTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        profileMenu.style.display =
+            profileMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', () => {
+        profileMenu.style.display = 'none';
+        });
+    }
+    </script>
+
+</body>
+</html>

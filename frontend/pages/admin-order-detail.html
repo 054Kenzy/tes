@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Detail | Admin Electhree</title>
+
+    <link rel="stylesheet" href="../assets/css/admin-dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- SIDEBAR (sama seperti dashboard) -->
+        <aside class="sidebar">
+        <div class="sidebar-logo">electhree</div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="nav-item">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+            <i class="fa-solid fa-box"></i>
+            <span>Products</span>
+            </a>
+            <a href="#" class="nav-item active">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Orders</span>
+            </a>
+            <a href="#" class="nav-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+            </a>
+            <a href="#" class="nav-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+            </a>
+        </nav>
+        </aside>
+
+        <!-- MAIN AREA -->
+        <div class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <h1 class="page-title">Order Detail</h1>
+            <div class="topbar-right">
+            <button class="icon-btn">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+                        <div class="admin-profile dropdown">
+            <button class="profile-trigger">
+                <div class="avatar">A</div>
+                <div class="admin-info">
+                <span class="name">Admin Electhree</span>
+                <span class="role">Administrator</span>
+                </div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+
+            <div class="profile-menu">
+                <div class="profile-menu-header">
+                <div class="avatar small">A</div>
+                <div>
+                    <p class="name">Admin Electhree</p>
+                    <p class="email">admin@electhree.com</p>
+                </div>
+                </div>
+                <div class="profile-menu-divider"></div>
+                <button class="profile-menu-item">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+                </button>
+                <button class="profile-menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Account settings</span>
+                </button>
+                <div class="profile-menu-divider"></div>
+                <a href="index.html" class="profile-menu-item logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+                </a>
+            </div>
+            </div>
+
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <div class="detail-grid">
+            <!-- LEFT: Order items -->
+            <section class="panel">
+                <h2 class="panel-title">Order Items</h2>
+                <div class="order-items">
+                <div class="item-row">
+                    <span class="item-name">Air Conditioner</span>
+                    <span class="item-qty">x2</span>
+                    <span class="item-price">Rp4.999.000</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-name">Electric Toothbrush</span>
+                    <span class="item-qty">x1</span>
+                    <span class="item-price">Rp799.000</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-name">Wireless Headphone</span>
+                    <span class="item-qty">x1</span>
+                    <span class="item-price">Rp650.000</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-name">Robot Vacuum</span>
+                    <span class="item-qty">x1</span>
+                    <span class="item-price">Rp597.000</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-name">Steam Iron</span>
+                    <span class="item-qty">x2</span>
+                    <span class="item-price">Rp1.791.000</span>
+                </div>
+                </div>
+
+                <div class="order-total">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span>Rp8.239.000</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <div class="total-row grand">
+                    <span>Total</span>
+                    <span>Rp8.239.000</span>
+                </div>
+                </div>
+            </section>
+
+            <!-- RIGHT: Summary + Update Status -->
+            <aside class="detail-sidebar">
+                <!-- Summary -->
+                <section class="panel panel-compact">
+                <h3 class="section-title">Summary</h3>
+                <div class="info-row">
+                    <span class="label">User:</span>
+                    <span class="value">Kenzynehe</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Email:</span>
+                    <span class="value">Kenzynehe@gmail.com</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Phone:</span>
+                    <span class="value">089776688999943</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Total:</span>
+                    <span class="value">Rp8.239.000</span>
+                </div>
+                </section>
+
+                <!-- Update Status -->
+                <section class="panel panel-compact">
+                <h3 class="section-title">Update Status</h3>
+                <p class="status-current">Status saat ini: <strong id="currentStatus">Pending</strong></p>
+
+                <label class="form-label">Pilih Status Baru</label>
+                <select class="form-select" id="statusSelect">
+                    <option value="Pending">Pending</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+
+                <button class="btn-update-full" onclick="updateOrderStatus()">Update</button>
+                </section>
+            </aside>
+            </div>
+        </main>
+        </div>
+    </div>
+
+    <script>
+        function updateOrderStatus() {
+        const newStatus = document.getElementById('statusSelect').value;
+        
+        // Nanti kirim ke backend
+        console.log('Update status to:', newStatus);
+        
+        // Update tampilan
+        document.getElementById('currentStatus').textContent = newStatus;
+        alert(`Status berhasil diubah ke: ${newStatus}`);
+        }
+    </script>
+
+    <script>
+    const profileTrigger = document.querySelector('.profile-trigger');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    if (profileTrigger && profileMenu) {
+        profileTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        profileMenu.style.display =
+            profileMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', () => {
+        profileMenu.style.display = 'none';
+        });
+    }
+    </script>
+
+</body>
+</html>

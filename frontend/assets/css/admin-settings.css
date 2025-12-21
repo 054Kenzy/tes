@@ -1,0 +1,229 @@
+/* Settings page layout */
+.settings-content {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Main store settings card */
+.settings-main-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+.settings-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.settings-header p {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Form */
+.settings-form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.settings-form input,
+.settings-form select {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.settings-form input:focus,
+.settings-form select:focus {
+  border-color: #2C4186;
+  box-shadow: 0 0 0 1px rgba(44, 65, 134, 0.15);
+}
+
+/* Buttons */
+.form-actions {
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: #2C4186;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Side cards (Notifications + Security) */
+.settings-side-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+.settings-card h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.settings-card p {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+/* Toggles */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  padding: 6px 0;
+}
+
+/* Simple switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 18px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #e5e7eb;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+  background-color: #2C4186;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+/* Security list */
+.security-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.8rem;
+}
+
+.security-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.security-list li strong {
+  display: block;
+  font-weight: 600;
+}
+
+.security-list li span {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.link-btn {
+  border: none;
+  background: transparent;
+  color: #2C4186;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .settings-content {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-side-grid {
+    flex-direction: column;
+  }
+
+  .form-group.two-cols {
+    grid-template-columns: 1fr;
+  }
+}

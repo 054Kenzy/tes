@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Electhree</title>
+
+    <link rel="stylesheet" href="../assets/css/admin-dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+        <div class="sidebar-logo">electhree</div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashbord.html" class="nav-item active">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Dashboard</span>
+            </a>
+            <a href="admin-products.html" class="nav-item">
+            <i class="fa-solid fa-box"></i>
+            <span>Products</span>
+            </a>
+            <a href="admin-orders.html" class="nav-item">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Orders</span>
+            </a>
+            <a href="admin-customers.html" class="nav-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Customers</span>
+            </a>
+            <a href="admin-settings.html" class="nav-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+            </a>
+        </nav>
+        </aside>
+
+        <!-- MAIN AREA -->
+        <div class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <h1 class="page-title">Dashboard</h1>
+            <div class="topbar-right">
+            <button class="icon-btn">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+                        <div class="admin-profile dropdown">
+            <button class="profile-trigger">
+                <div class="avatar">A</div>
+                <div class="admin-info">
+                <span class="name">Admin Electhree</span>
+                <span class="role">Administrator</span>
+                </div>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+
+            <div class="profile-menu">
+                <div class="profile-menu-header">
+                <div class="avatar small">A</div>
+                <div>
+                    <p class="name">Admin Electhree</p>
+                    <p class="email">admin@electhree.com</p>
+                </div>
+                </div>
+                <div class="profile-menu-divider"></div>
+                <button class="profile-menu-item">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+                </button>
+                <button class="profile-menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Account settings</span>
+                </button>
+                <div class="profile-menu-divider"></div>
+                <a href="index.html" class="profile-menu-item logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+                </a>
+            </div>
+            </div>
+
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <!-- Summary cards -->
+            <section class="cards-row">
+            <article class="card">
+                <p class="card-label">Total Orders</p>
+                <p class="card-value">1.240</p>
+                <p class="card-sub">+12% vs last month</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Revenue</p>
+                <p class="card-value">Rp 89.500.000</p>
+                <p class="card-sub">+8% vs last month</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Products</p>
+                <p class="card-value">128</p>
+                <p class="card-sub">Active items</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Customers</p>
+                <p class="card-value">3.420</p>
+                <p class="card-sub">Registered users</p>
+            </article>
+            </section>
+
+            <!-- Orders table (preview) -->
+            <section class="panel">
+            <div class="panel-header">
+                <h2>Recent Orders</h2>
+                <a href="admin-orders.html" class="link-small">View all</a>
+            </div>
+            <div class="table">
+                <div class="table-row table-head">
+                <span>Order ID</span>
+                <span>Customer</span>
+                <span>Date</span>
+                <span>Total</span>
+                <span>Status</span>
+                </div>
+                
+                <div class="table-row">
+                <span>
+                    <a href="admin-order-detail.html" style="color: #324c8a; text-decoration: none;">
+                    #E3-20251220
+                    </a>
+                </span>
+                <span>John Doe</span>
+                <span>21 Dec 2025</span>
+                <span>Rp 2.899.000</span>
+                <span class="badge badge-paid">Paid</span>
+                </div>
+
+                <div class="table-row">
+                <span>#E3-20251219</span>
+                <span>Jane Smith</span>
+                <span>20 Dec 2025</span>
+                <span>Rp 1.450.000</span>
+                <span class="badge badge-pending">Pending</span>
+                </div>
+            </div>
+            </section>
+        </main>
+        </div>
+    </div>
+
+    <script>
+    const profileTrigger = document.querySelector('.profile-trigger');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    if (profileTrigger && profileMenu) {
+        profileTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        profileMenu.style.display =
+            profileMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', () => {
+        profileMenu.style.display = 'none';
+        });
+    }
+    </script>
+
+</body>
+</html>
